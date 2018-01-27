@@ -23,7 +23,7 @@ public class fraccion {
 		if (fraccion2.getDenominador()==denominador) {
 			suma.setDenominador(denominador);
 			suma.setNumerador(fraccion2.getNumerador()+numerador);
-		}else {
+		}else{
 			mcm=mcm(fraccion2.getDenominador());
 			suma.setDenominador(mcm);
 			suma.setNumerador((mcm/fraccion2.getDenominador()*fraccion2.getNumerador())+(mcm/denominador*numerador));
@@ -123,7 +123,8 @@ public class fraccion {
 			System.out.println("Elige el denominador");
 			try {
 				this.denominador=Integer.parseInt(introducirdato());
-				introducido=true;
+				if (denominador!=0)introducido=true;
+				else System.out.println("Introduce un número distinto de cero, por favor");
 			}catch(NumberFormatException ex) {
 				System.out.println("Por favor, introduce un número, no un carácter");
 			}			
